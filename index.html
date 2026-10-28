@@ -35,6 +35,8 @@ img { max-width: 100%; }
   --gold: #d2b895;
   --terracotta: #aa7651;
   --brown: #4e341b;
+  --brown-dark: #3a2614;
+  --brown-deeper: #2b1c0e;
   --olive: #625f40;
   --border: #d3c9b6;
   --destructive: oklch(0.577 0.245 27.325);
@@ -258,7 +260,7 @@ input::placeholder, textarea::placeholder { color: #8a7f68; }
 @media (max-width: 440px) { .btn-wa { font-size: .85rem; letter-spacing: .03em; gap: .6rem; padding-inline: 1rem; } .btn-wa .icon-wa { width: 1.25rem; height: 1.25rem; } }
 
 /* RODAPÉ */
-footer { background: var(--brown); color: var(--hero-fg); border-top: 1px solid rgba(210, 184, 149, .3); }
+footer { background: var(--brown-deeper); color: var(--hero-fg); border-top: 1px solid rgba(210, 184, 149, .3); }
 footer .small-muted { color: #c9bca6; }
 footer .foot-ig { color: var(--hero-muted); }
 footer .foot-ig:hover { color: var(--gold); }
@@ -269,7 +271,7 @@ footer .foot-ig svg { width: 1.1rem; height: 1.1rem; }
 footer .small-muted { font-size: .68rem; }
 @media (min-width: 768px) { footer .foot { padding-block: 1.25rem; } footer .small-muted { font-size: .72rem; } }
 /* Seção final de orçamento: escura, como o banner */
-#orcamento { background: var(--brown); color: var(--hero-fg); border-color: transparent; }
+#orcamento { background: var(--brown-dark); color: var(--hero-fg); border-color: transparent; }
 #orcamento .h2 { color: var(--hero-fg); }
 #orcamento .lead { color: var(--hero-muted); }
 #orcamento strong { color: var(--gold) !important; }
