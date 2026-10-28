@@ -186,6 +186,11 @@ button { font: inherit; }
 .pf-item .ph { border-radius: .75rem; transition: transform .3s ease; }
 .pf-item:hover .ph { transform: scale(1.04); }
 .center { margin-top: 2.5rem; display: flex; justify-content: center; }
+/* portfólio: até 12 fotos visíveis; o resto aparece no botão "Ver portfólio completo" */
+.grid-pf:not(.aberto) .pf-item.pf-extra { display: none; }
+.pf-toggle { background: transparent; color: var(--foreground); border: 1px solid var(--foreground); }
+.pf-toggle:hover { background: var(--foreground); color: var(--background); }
+.pf-toggle .pf-count { opacity: .7; }
 
 
 /* AVALIAÇÕES */
@@ -391,6 +396,7 @@ src="https://www.facebook.com/tr?id=1174921840367416&ev=PageView&noscript=1"
 
   <section class="wrap section" id="portfolio" aria-label="Portfólio" data-ta="aria-label:portfolio">
     <div class="grid-pf" id="portfolio-grid"></div>
+    <div class="center" id="pf-more" hidden><button type="button" class="btn pf-toggle" id="pf-toggle" aria-expanded="false" aria-controls="portfolio-grid"><span data-t="pfMais">Ver portfólio completo</span><span data-t="pfMenos" hidden>Mostrar menos</span> <span class="pf-count" id="pf-count"></span></button></div>
   </section>
 
 
@@ -617,10 +623,25 @@ renderMarquee();
 /* Portfólio + lightbox */
 (function () {
   const grid = $("portfolio-grid");
-  grid.innerHTML = site.portfolio.map((f, i) => `<button type="button" class="pf-item" data-i="${i}" aria-label="Ampliar: ${esc(f.alt)}">${media(f.src, f.alt, f.motivo, true, "(min-width: 768px) 23rem, calc(50vw - 30px)")}</button>`).join("");
+  const PF_VISIVEIS = 12; /* quantas fotos aparecem antes do botão */
+  grid.innerHTML = site.portfolio.map((f, i) => `<button type="button" class="pf-item${i >= PF_VISIVEIS ? " pf-extra" : ""}" data-i="${i}" aria-label="Ampliar: ${esc(f.alt)}">${media(f.src, f.alt, f.motivo, true, "(min-width: 768px) 23rem, calc(50vw - 30px)")}</button>`).join("");
   const lb = $("lightbox");
   let cur = null, opener = null;
   const n = site.portfolio.length;
+  /* botão "Ver portfólio completo" / "Mostrar menos" */
+  if (n > PF_VISIVEIS) {
+    const tg = $("pf-toggle"), [mais, menos] = tg.querySelectorAll("[data-t]");
+    $("pf-more").hidden = false;
+    $("pf-count").textContent = `(+${n - PF_VISIVEIS})`;
+    tg.addEventListener("click", () => {
+      const aberto = grid.classList.toggle("aberto");
+      tg.setAttribute("aria-expanded", String(aberto));
+      mais.hidden = aberto; menos.hidden = !aberto;
+      $("pf-count").hidden = aberto;
+      if (aberto) { const b = grid.querySelector(".pf-extra"); if (b) b.focus({ preventScroll: true }); }
+      else $("portfolio").scrollIntoView({ behavior: reduced ? "auto" : "smooth", block: "start" });
+    });
+  }
   function show(i) {
     cur = (i + n) % n;
     const f = site.portfolio[cur];
@@ -706,6 +727,8 @@ const I18N = {
       orcSub: "Request your quote below",
       orcBotao: "Get my quote",
       direitos: "All rights reserved.",
+      pfMais: "See full portfolio",
+      pfMenos: "Show less",
     },
     ta: {
       langAria: "Language", heroAlt: "Damisel Ramirez, realistic tattoo artist in Florianópolis, Brazil, in a black polo shirt in front of a bookshelf",
@@ -783,6 +806,8 @@ const I18N = {
       orcSub: "Solicita tu presupuesto abajo",
       orcBotao: "Quiero recibir mi presupuesto",
       direitos: "Todos los derechos reservados.",
+      pfMais: "Ver portafolio completo",
+      pfMenos: "Mostrar menos",
     },
     ta: {
       langAria: "Idioma", heroAlt: "Damisel Ramirez, tatuador realista en Florianópolis, Brasil, con polo negra frente a una estantería de libros",
