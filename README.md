@@ -35,12 +35,19 @@ Ficam direto no HTML: textos do banner, do "Quem sou" e do valor médio e o link
 
 ## Fotos
 
-- `assets/banner-4.webp`: foto do banner
-- `assets/quem-sou-5.webp`: foto do "Quem sou"
-- `assets/estilo-dami-*.webp`: fotos do carrossel "Projetos recentes"
-- `assets/portfolio-d*.webp`: fotos do portfólio
+Os nomes das fotos descrevem a tatuagem e terminam em `-florianopolis`, para ajudar a busca do Google por "tatuagem em Florianópolis". Cada foto também leva título, descrição, autor e palavras-chave nos metadados do arquivo (EXIF e XMP).
 
-As fotos do carrossel e do portfólio têm versões menores com `-480` e `-360` no nome, e o banner e o "Quem sou" têm `banner-4-800.webp` e `quem-sou-5-720.webp`. O celular carrega a versão menor e o computador a maior. Ao trocar uma foto, troque as duas versões.
+- `assets/tatuador-damisel-ramirez-florianopolis.webp`: foto do banner
+- `assets/damisel-ramirez-tatuagem-florianopolis-estudio.webp`: foto do "Quem sou"
+- `assets/tatuagem-*-florianopolis.webp`: fotos do carrossel "Projetos recentes" e do portfólio
+
+As fotos de tatuagem têm versões menores com `-480` e `-360` no nome, e o banner e o "Quem sou" têm versões `-800` e `-720`. O celular carrega a versão menor e o computador a maior. Ao trocar uma foto, troque todas as versões e mantenha o nome descritivo, começando por `tatuagem-` (é o que liga as versões menores no código).
+
+O texto alternativo (`alt`) de cada foto fica no objeto `site` e nas traduções `I18N`, sempre citando o tipo de tatuagem e Florianópolis.
+
+## SEO
+
+No `<head>` ficam o título da página, a descrição, as palavras-chave, os dados para redes sociais (`og:`) e um bloco `application/ld+json` que apresenta o estúdio ao Google como estúdio de tatuagem em Florianópolis, com WhatsApp, Instagram e faixa de preço. Quando tiver o endereço completo do estúdio e o domínio do site, acrescente `streetAddress` e `postalCode` nesse bloco e troque os caminhos das imagens por endereços completos.
 
 ## Desempenho
 
