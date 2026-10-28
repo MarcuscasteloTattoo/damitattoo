@@ -93,7 +93,9 @@ button { font: inherit; }
 @media (min-width: 768px) { .hero-inner { min-height: 84svh; align-items: center; padding-block: 6rem; } }
 .hero-copy { max-width: 36rem; text-align: center; }
 .hero-brand { margin-bottom: 1rem; font-size: .75rem; font-weight: 500; letter-spacing: .35em; text-transform: uppercase; color: var(--gold); }
-.hero h1 { font-size: 3rem; line-height: 1.05; color: var(--hero-fg); }
+.hero h1 { font-size: min(3rem, 11.5vw); line-height: 1.05; color: var(--hero-fg); }
+/* "Damisel Ramirez" sempre na mesma linha, "Tattoo" na de baixo */
+.h1-name { display: block; white-space: nowrap; }
 @media (min-width: 768px) { .hero h1 { font-size: 3.75rem; } }
 @media (min-width: 1024px) { .hero h1 { font-size: 4.25rem; } }
 .h1-city { display: block; margin-top: 1rem; font-family: var(--font-body); font-size: .8rem; font-weight: 500; line-height: 1.4; letter-spacing: .35em; text-transform: uppercase; color: var(--gold); }
@@ -348,7 +350,7 @@ footer .small-muted { font-size: .68rem; }
   <img src="assets/tatuador-damisel-ramirez-florianopolis.webp" srcset="assets/tatuador-damisel-ramirez-florianopolis-800.webp 800w, assets/tatuador-damisel-ramirez-florianopolis.webp 1080w" sizes="(min-width: 900px) 56vw, 100vw" width="1080" height="1350" alt="Damisel Ramirez, tatuador em Florianópolis especialista em tatuagem realista, de polo preta diante de uma estante de livros" data-ta="alt:heroAlt" fetchpriority="high" decoding="async">
   <div class="wrap hero-inner">
     <div class="hero-copy">
-      <h1 data-t="h1">Damisel Ramirez Tattoo<span class="h1-city">Florianópolis</span></h1>
+      <h1 data-t="h1"><span class="h1-name">Damisel Ramirez</span> Tattoo<span class="h1-city">Florianópolis</span></h1>
       <p class="hero-sub" data-t="heroSub">Tatuagem realista em Florianópolis, em preto e cinza e colorida, com riqueza de detalhes e projetos 100% personalizados para eternizar a sua história.</p>
     </div>
   </div>
@@ -681,7 +683,7 @@ const I18N = {
     msg: "Hi, I came from Damisel's website and I'd like to get a tattoo!",
     ampliar: "Enlarge: ", ampliarFoto: "Enlarge photo: ", googleAria: "Google review", starsAria: "5 out of 5 stars",
     t: {
-      h1: 'Damisel Ramirez Tattoo<span class="h1-city">Florianópolis</span>',
+      h1: '<span class="h1-name">Damisel Ramirez</span> Tattoo<span class="h1-city">Florianópolis</span>',
       heroSub: "Realistic tattoos in Florianópolis, in black and grey and in color, rich in detail and with 100% custom projects to immortalize your story.",
       projetos: "Recent projects",
       sobre1: "For me, a tattoo is much more than art on skin: it is the union of technique, artistic sensitivity and stories that deserve to be portrayed in a unique way. My path as a tattoo artist is defined by constant dedication to improvement, careful study of each project and the pursuit of excellence in realistic black and grey and color tattoos.",
@@ -758,7 +760,7 @@ const I18N = {
     msg: "¡Hola! Vengo del sitio web de Damisel y quiero hacerme un tatuaje.",
     ampliar: "Ampliar: ", ampliarFoto: "Ampliar foto: ", googleAria: "Reseña de Google", starsAria: "5 de 5 estrellas",
     t: {
-      h1: 'Damisel Ramirez Tattoo<span class="h1-city">Florianópolis</span>',
+      h1: '<span class="h1-name">Damisel Ramirez</span> Tattoo<span class="h1-city">Florianópolis</span>',
       heroSub: "Tatuaje realista en Florianópolis, en negro y gris y a color, con gran riqueza de detalles y proyectos 100% personalizados para inmortalizar tu historia.",
       projetos: "Proyectos recientes",
       sobre1: "Para mí, el tatuaje es mucho más que arte en la piel: es la unión entre técnica, sensibilidad artística e historias que merecen ser representadas de forma única. Mi trayectoria como tatuador está marcada por la dedicación constante al perfeccionamiento, el estudio de cada proyecto y la búsqueda de la excelencia en tatuajes realistas en negro y gris y a color.",
