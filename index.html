@@ -106,6 +106,13 @@ button { font: inherit; }
   .hero-copy { text-align: left; max-width: 31rem; }
   .hero-sub { margin-left: 0; }
 }
+/* celular: rosto nítido no alto, escurecimento só da altura das mãos para baixo, onde fica o texto */
+@media (max-width: 899px) {
+  /* foto na largura da tela, presa no alto (proporção 4:5 => altura = 125vw) */
+  .hero > img { bottom: auto; height: 125vw; object-position: 50% 0; }
+  .hero::after { background: linear-gradient(180deg, rgba(46, 41, 26, .1) 0, rgba(46, 41, 26, 0) calc(125vw * .3), rgba(46, 41, 26, .45) calc(125vw * .58), rgba(46, 41, 26, .9) calc(125vw * .78), var(--primary) calc(125vw * .97)); }
+  .hero-inner { min-height: 0; align-items: flex-start; padding-block: calc(125vw * .62) 2.5rem; }
+}
 .btn {
   display: inline-flex; align-items: center; justify-content: center; gap: .5rem;
   border: 0; border-radius: 999px; background: var(--primary); color: var(--primary-fg);
