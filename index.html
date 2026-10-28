@@ -220,7 +220,7 @@ button { font: inherit; }
 .about { display: grid; align-items: center; gap: 2.5rem; }
 @media (min-width: 768px) { .about { grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr); gap: 3.5rem; } }
 @media (min-width: 1024px) { .about { gap: 5rem; } }
-.about-img { aspect-ratio: 4 / 5; width: 100%; height: auto; max-width: 100%; border-radius: var(--radius); object-fit: cover; object-position: 50% 50%; display: block; }
+.about-img { aspect-ratio: 2 / 3; width: 100%; height: auto; max-width: 100%; border-radius: var(--radius); object-fit: cover; object-position: 50% 72%; display: block; }
 .about-copy { min-width: 0; }
 .about-copy h2 { font-size: 1.875rem; line-height: 1.15; }
 .about-alias { display: block; margin-top: .35rem; font-family: var(--font-body); font-size: .8rem; font-weight: 500; letter-spacing: .25em; text-transform: uppercase; color: var(--accent); }
@@ -384,7 +384,7 @@ src="https://www.facebook.com/tr?id=1174921840367416&ev=PageView&noscript=1"
 
   <section class="wrap section" id="sobre">
     <div class="about">
-      <img class="about-img" src="assets/quem-sou-3.webp" srcset="assets/quem-sou-3-720.webp 720w, assets/quem-sou-3.webp 870w" sizes="(min-width: 768px) 55vw, 100vw" width="870" height="1087" alt="Tatuador de camiseta verde e calça jeans sentado, com a mão no queixo, os braços cruzados e relógio no pulso" data-ta="alt:aboutAlt" loading="lazy" decoding="async">
+      <img class="about-img" src="assets/quem-sou-4.webp" srcset="assets/quem-sou-4-720.webp 720w, assets/quem-sou-4.webp 1000w" sizes="(min-width: 768px) 55vw, 100vw" width="1000" height="1778" alt="Tatuador de camiseta verde sentado numa poltrona de madeira, de pernas cruzadas, segurando um tablet e uma caneta digital" data-ta="alt:aboutAlt" loading="lazy" decoding="async">
       <div class="about-copy">
         <h2>Damisel Ramírez <span class="about-alias">— Dami Tattoo</span></h2>
         <p data-t="sobre1">A tatuagem é, para mim, muito mais do que arte na pele: é a união entre técnica, sensibilidade artística e histórias que merecem ser representadas de forma única. Minha trajetória como tatuador é marcada pela dedicação constante ao aperfeiçoamento, pelo estudo de cada projeto e pela busca de excelência em tatuagens realistas em preto e cinza e coloridas.</p>
@@ -689,7 +689,7 @@ const I18N = {
     ta: {
       langAria: "Language", heroAlt: "Tattoo artist in a green T-shirt sitting against a light wall, hand on his chin and arms crossed",
       projetos: "Recent projects", projAnt: "Previous project", projProx: "Next project", portfolio: "Portfolio",
-      aboutAlt: "Tattoo artist in a green T-shirt and jeans sitting, hand on his chin, arms crossed and a watch on his wrist",
+      aboutAlt: "Tattoo artist in a green T-shirt sitting in a wooden armchair, legs crossed, holding a tablet and a stylus",
       ratingAria: "Rated 5.0 out of 5 on Google, from 248 reviews", avAria: "Client reviews", avAnt: "Previous review", avProx: "Next review",
       igAria: "Damisel Ramirez's Instagram", lbAria: "Enlarged photo", lbFechar: "Close", lbAnt: "Previous photo", lbProx: "Next photo",
     },
@@ -757,7 +757,7 @@ const I18N = {
     ta: {
       langAria: "Idioma", heroAlt: "Tatuador con camiseta verde sentado frente a una pared clara, con la mano en el mentón y los brazos cruzados",
       projetos: "Proyectos recientes", projAnt: "Proyecto anterior", projProx: "Siguiente proyecto", portfolio: "Portafolio",
-      aboutAlt: "Tatuador con camiseta verde y jeans sentado, con la mano en el mentón, los brazos cruzados y un reloj en la muñeca",
+      aboutAlt: "Tatuador con camiseta verde sentado en un sillón de madera, con las piernas cruzadas, sosteniendo una tableta y un lápiz digital",
       ratingAria: "Calificación 5,0 de 5 en Google, con 248 reseñas", avAria: "Reseñas de clientes", avAnt: "Reseña anterior", avProx: "Siguiente reseña",
       igAria: "Instagram de Damisel Ramirez", lbAria: "Foto ampliada", lbFechar: "Cerrar", lbAnt: "Foto anterior", lbProx: "Foto siguiente",
     },
