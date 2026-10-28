@@ -217,6 +217,7 @@ button { font: inherit; }
 .about-img { aspect-ratio: 4 / 5; width: 100%; height: auto; max-width: 100%; border-radius: var(--radius); object-fit: cover; object-position: 50% 50%; display: block; }
 .about-copy { min-width: 0; }
 .about-copy h2 { font-size: 1.875rem; line-height: 1.15; }
+.about-alias { display: block; margin-top: .35rem; font-family: var(--font-body); font-size: .8rem; font-weight: 500; letter-spacing: .25em; text-transform: uppercase; color: var(--accent); }
 @media (min-width: 768px) { .about-copy h2 { font-size: 2.25rem; } }
 .about-copy p { margin-top: 1.25rem; line-height: 1.7; color: var(--muted-fg); max-width: 38rem; }
 .about-copy .link-accent { margin-top: 1.75rem; letter-spacing: .04em; text-transform: uppercase; }
@@ -379,12 +380,9 @@ src="https://www.facebook.com/tr?id=1174921840367416&ev=PageView&noscript=1"
     <div class="about">
       <img class="about-img" src="assets/quem-sou-3.webp" srcset="assets/quem-sou-3-720.webp 720w, assets/quem-sou-3.webp 870w" sizes="(min-width: 768px) 55vw, 100vw" width="870" height="1087" alt="Tatuador de camiseta verde e calça jeans sentado, com a mão no queixo, os braços cruzados e relógio no pulso" data-ta="alt:aboutAlt" loading="lazy" decoding="async">
       <div class="about-copy">
-        <h2>Damisel Ramirez</h2>
-        <p data-t="sobre1">Meu nome é Damisel Ramirez.</p>
-        <p data-t="sobre2">Sou especialista em hiper-realismo, sendo meu estilo marcado pelo detalhismo e pelo respeito ao desejo de cada cliente.</p>
-        <p data-t="sobre3">Aqui, cada traço tem um significado, cada tatuagem tem um propósito, por isso, trabalho com projetos 100% personalizados e individuais, priorizando sempre a história e originalidade de cada cliente.</p>
-        <p data-t="sobre4">É esse compromisso com a autenticidade e o cuidado que me motiva a melhorar e crescer todos os dias.</p>
-        <p data-t="sobre5">Vamos juntos transformar suas ideias em arte?</p>
+        <h2>Damisel Ramírez <span class="about-alias">— Dami Tattoo</span></h2>
+        <p data-t="sobre1">A tatuagem é, para mim, muito mais do que arte na pele: é a união entre técnica, sensibilidade artística e histórias que merecem ser representadas de forma única. Minha trajetória como tatuador é marcada pela dedicação constante ao aperfeiçoamento, pelo estudo de cada projeto e pela busca de excelência em tatuagens realistas em preto e cinza e coloridas.</p>
+        <p data-t="sobre2">Meu trabalho se destaca pela riqueza de detalhes, pelo domínio de luzes e sombras, pela harmonia das cores e pela composição anatômica, criando tatuagens que valorizam as formas naturais do corpo. Cada projeto é desenvolvido com planejamento, precisão e atenção individual, porque acredito que uma grande tatuagem não depende apenas de uma boa imagem, mas de como ela ganha vida na pele.</p>
         <a class="link-accent" href="https://www.instagram.com/dami_tattoo/" target="_blank" rel="noopener noreferrer"><svg class="icon"><use href="#i-ig"/></svg>@dami_tattoo</a>
       </div>
     </div>
@@ -669,11 +667,8 @@ const I18N = {
       h1: '<span style="white-space:nowrap">High‑end</span> hyper‑realism',
       heroSub: "Realistic tattoos rich in detail, with 100% custom projects created to immortalize your story.",
       projetos: "Recent projects",
-      sobre1: "My name is Damisel Ramirez.",
-      sobre2: "I specialize in hyper-realism, and my style is defined by attention to detail and respect for each client's wishes.",
-      sobre3: "Here, every line has a meaning and every tattoo has a purpose. That's why I work with 100% custom, one-of-a-kind projects, always prioritizing each client's story and originality.",
-      sobre4: "It is this commitment to authenticity and care that drives me to improve and grow every day.",
-      sobre5: "Shall we turn your ideas into art together?",
+      sobre1: "For me, a tattoo is much more than art on skin: it is the union of technique, artistic sensitivity and stories that deserve to be portrayed in a unique way. My path as a tattoo artist is defined by constant dedication to improvement, careful study of each project and the pursuit of excellence in realistic black and grey and color tattoos.",
+      sobre2: "My work stands out for its richness of detail, its mastery of light and shadow, its harmony of color and its anatomical composition, creating tattoos that enhance the natural shapes of the body. Each project is developed with planning, precision and individual attention, because I believe a great tattoo depends not only on a good image, but on how it comes to life on the skin.",
       nota: "5.0",
       avCount: "248 reviews",
       avTitulo: "Google reviews",
@@ -740,11 +735,8 @@ const I18N = {
       h1: 'Hiperrealismo de <span style="white-space:nowrap">alto nivel</span>',
       heroSub: "Tatuajes realistas con gran riqueza de detalles y proyectos 100% personalizados, creados para inmortalizar tu historia.",
       projetos: "Proyectos recientes",
-      sobre1: "Mi nombre es Damisel Ramirez.",
-      sobre2: "Soy especialista en hiperrealismo, y mi estilo se distingue por el detalle y el respeto al deseo de cada cliente.",
-      sobre3: "Aquí, cada trazo tiene un significado y cada tatuaje tiene un propósito. Por eso trabajo con proyectos 100% personalizados e individuales, priorizando siempre la historia y la originalidad de cada cliente.",
-      sobre4: "Es este compromiso con la autenticidad y el cuidado lo que me motiva a mejorar y crecer cada día.",
-      sobre5: "¿Transformamos juntos tus ideas en arte?",
+      sobre1: "Para mí, el tatuaje es mucho más que arte en la piel: es la unión entre técnica, sensibilidad artística e historias que merecen ser representadas de forma única. Mi trayectoria como tatuador está marcada por la dedicación constante al perfeccionamiento, el estudio de cada proyecto y la búsqueda de la excelencia en tatuajes realistas en negro y gris y a color.",
+      sobre2: "Mi trabajo se destaca por la riqueza de detalles, el dominio de las luces y las sombras, la armonía de los colores y la composición anatómica, creando tatuajes que valoran las formas naturales del cuerpo. Cada proyecto se desarrolla con planificación, precisión y atención individual, porque creo que un gran tatuaje no depende solo de una buena imagen, sino de cómo cobra vida en la piel.",
       nota: "5,0",
       avCount: "248 reseñas",
       avTitulo: "Reseñas de Google",
