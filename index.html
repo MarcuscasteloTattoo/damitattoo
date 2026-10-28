@@ -36,7 +36,7 @@ img { max-width: 100%; }
   --secondary-soft: #e9e5dc;
   --secondary-fg: #2e2214;
   --muted-fg: #5a5739;
-  --accent: #8f5e3b;
+  --accent: #7d5131;
   --gold: #d2b895;
   --terracotta: #aa7651;
   --brown: #4e341b;
@@ -657,12 +657,17 @@ renderMarquee();
   }).join("");
   box.addEventListener("click", (e) => { const b = e.target.closest(".review-photo-btn"); if (b) window.abrirFotoUnica(b.dataset.src, b.dataset.alt, b); });
   let paused = false;
+  /* medidas guardadas fora do avanço automático: ler layout enquanto o outro carrossel anima força reflow */
+  const m = { card: 0, box: 0, total: 0, left: 0 };
+  const medir = () => { const c = box.querySelector("article"); m.card = c ? c.offsetWidth : 0; m.box = box.clientWidth; m.total = box.scrollWidth; };
+  if (window.ResizeObserver) new ResizeObserver(medir).observe(box); else { medir(); window.addEventListener("resize", medir); }
+  box.addEventListener("scroll", () => { m.left = box.scrollLeft; }, { passive: true });
   function scroll(dir) {
-    const c = box.querySelector("article"), w = (c ? c.offsetWidth : box.clientWidth) + 16;
-    const atEnd = box.scrollLeft + box.clientWidth >= box.scrollWidth - 8, atStart = box.scrollLeft <= 8;
+    const w = (m.card || m.box) + 16;
+    const atEnd = m.left + m.box >= m.total - 8, atStart = m.left <= 8;
     const behavior = reduced ? "auto" : "smooth";
     if (dir === 1 && atEnd) return box.scrollTo({ left: 0, behavior });
-    if (dir === -1 && atStart) return box.scrollTo({ left: box.scrollWidth, behavior });
+    if (dir === -1 && atStart) return box.scrollTo({ left: m.total, behavior });
     box.scrollBy({ left: dir * w, behavior });
   }
   $("rev-prev").onclick = () => scroll(-1);
