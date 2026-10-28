@@ -35,12 +35,12 @@ Ficam direto no HTML: textos do banner, do "Quem sou" e do valor médio e o link
 
 ## Fotos
 
-- `assets/banner-3.webp`: foto do banner
-- `assets/quem-sou-4.webp`: foto do "Quem sou"
+- `assets/banner-4.webp`: foto do banner
+- `assets/quem-sou-5.webp`: foto do "Quem sou"
 - `assets/estilo-rafael-*.webp`: fotos do carrossel "Projetos recentes"
 - `assets/portfolio-r*.webp`: fotos do portfólio
 
-As fotos do carrossel e do portfólio têm versões menores com `-480` e `-360` no nome, e o banner e o "Quem sou" têm `banner-3-800.webp` e `quem-sou-4-720.webp`. O celular carrega a versão menor e o computador a maior. Ao trocar uma foto, troque as duas versões.
+As fotos do carrossel e do portfólio têm versões menores com `-480` e `-360` no nome, e o banner e o "Quem sou" têm `banner-4-800.webp` e `quem-sou-5-720.webp`. O celular carrega a versão menor e o computador a maior. Ao trocar uma foto, troque as duas versões.
 
 ## Desempenho
 
